@@ -27,31 +27,36 @@ body,
 
 .custom-container {
   display: grid;
-  grid-template-rows: [row-start] repeat(3, auto) 200px 50px [row-end];
+  grid-template-rows: [row-start] repeat(4, auto) 200px 50px [row-end];
   grid-template-columns: [column-start] 350px [column-middle] 500px [column-end];
   column-gap: 20px;
   row-gap: 10px;
   border: black solid 1px;
   padding: 50px 20px;
   border-radius: var(--radius-lg);
-  @apply dark:bg-stone-50 dark:text-gray-950;
+  @apply dark:bg-gray-900 dark:text-slate-50;
 }
 
 textarea {
   height: 100%;
   width: 100%;
-  border: 1px solid black;
-  border-top-left-radius: var(--radius-lg);
-  border-bottom-left-radius: var(--radius-lg);
   resize: none;
   padding: 5px 10px;
   overflow-y: auto;
   overflow-x: hidden;
-  @apply bg-zinc-950 text-stone-50;
+  @apply bg-slate-50 text-gray-950 dark:bg-gray-950 dark:text-slate-50 shadow-sm;
+}
+
+.custom-container {
+  @apply border-1 border-gray-300/50 dark:border-gray-950/50 rounded-xl shadow-xl/50;
+}
+
+.textarea-left {
+  @apply border-1 border-gray-300/50 dark:border-gray-950/50 rounded-xl focus:border-2 focus:border-gray-500/50 focus:outline-hidden;
 }
 
 .title-text {
-  font-size: 55px;
+  font-size: 45px;
   text-align: left;
 }
 
@@ -64,43 +69,55 @@ textarea {
   grid-column: column-middle / column-end;
 }
 
-.button-container {
+.created-by-container {
   display: flex;
   justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  @apply border-1 rounded-md bg-slate-50 shadow-md border-gray-500/50 dark:text-stone-50 dark:bg-gray-950 dark:border-gray-950/50;
+}
+
+.author-text {
+  text-decoration: underline;
+}
+
+.created-by-text {
+  text-decoration: none;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   padding: 3px;
   gap: 10px;
 }
 
 .encode-button-container {
-  height: 60px;
-  width: 170px;
-  border: 1px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 3px 15px;
   gap: 10px;
-  border-radius: var(--radius-lg);
+  height: 50px;
+  padding: 10px;
+  @apply border-1 border-gray-300/50 dark:outline-hidden dark:border-hidden;
 }
 
 .encode-button {
-  color: #fff;
-  border: 3px solid var(--color-blue-500);
-  padding: 5px;
-  border-radius: var(--radius-lg);
-  background-color: var(--color-blue-500);
+  padding: 9px;
+  @apply border-1 border-gray-500/50 rounded-md shadow-sm/30 hover:shadow-md/50 dark:bg-gray-950 dark:text-slate-50 dark:border-gray-500/50;
 }
 
 .dark-mode-button-container {
-  width: 100%;
-  border: 1px solid black;
-  height: 60px;
   display: flex;
   justify-content: center;
-  padding: 3px;
-  border-radius: var(--radius-lg);
+  gap: 10px;
+  height: 50px;
+  padding: 10px;
   align-items: center;
+  @apply border-1 border-gray-300/50 dark:outline-hidden dark:border-hidden;
 }
 
 /* STYLES FOR THE BUTTON TOGGLE */
