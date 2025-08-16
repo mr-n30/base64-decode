@@ -11,7 +11,7 @@ export default function App() {
   return (
     <div className='custom-container'>
       <ContainerLeft input={input} setInput={setInput} setOutput={setOutput} checked={checked} setChecked={setChecked} />
-      <ContainerRight output={output} />
+      <ContainerRight output={output} checked={checked} />
     </div>
   )
 }
